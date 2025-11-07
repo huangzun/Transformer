@@ -1,0 +1,33 @@
+# Transformer 超参数配置
+
+# 模型参数
+model:
+  vocab_size: 10000
+  d_model: 128
+  num_heads: 4
+  d_ff: 512
+  num_encoder_layers: 2
+  num_decoder_layers: 2
+  dropout: 0.1
+  max_seq_len: 128
+
+# 训练参数
+training:
+  batch_size: 32
+  learning_rate: 3e-4
+  weight_decay: 1e-5
+  epochs: 20
+  warmup_steps: 500
+  grad_clip: 1.0
+  
+# 数据参数
+data:
+  dataset_name: wikitext
+  dataset_config: wikitext-2
+  max_seq_len: 128
+  
+# 其他
+device: cuda
+seed: 42
+save_dir: results/
+log_interval: 100
